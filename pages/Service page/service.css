@@ -1,0 +1,98 @@
+#heading{
+    color:#C6a769;
+    font-weight: bold;
+    font-style: poppins-medium;
+    font-size: 16px;
+    letter-spacing:2px;
+}
+
+.font-montserrat {
+    font-family: "Montserrat", sans-serif;
+}
+.golden-text {
+    color: #C6a769;
+}
+
+.section-title::after{
+    content:"";
+    width:80px;
+    height:1px;
+    background:#C6a769;
+    opacity:0.4;
+}
+
+#headtext{
+    width: 450px;
+    margin-top: 20px;
+    font-size: 14px;
+}
+#disscussbtn{
+    margin-top: 30px;
+    background: linear-gradient(
+        90deg,
+        #997331 0%,
+        #C6A769 50%,
+        #997331 100%
+    );
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 12px;
+    letter-spacing: 1px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#disscussbtn .arrow{
+    font-size: 22px;  
+    font-weight: 300;
+    line-height: 1;
+}
+.service-card{
+    border: 1px solid #C6a769;
+    border-radius: 10px;
+    overflow: hidden;
+}
+#learntext{
+    color: #C6a769;
+    letter-spacing: 1px;
+    font-size: 12px;
+    font-weight: 800;
+    margin-top: 20px;
+}
+.procestext{
+    font-size: 12px;
+    font-weight: 700;
+}
+.choosetext{
+    font-size: 14px;
+    font-weight: 700;
+}
+#processdiv{
+    border: 1px solid #C6a769;
+}
+.circlenum{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+     background: linear-gradient(
+         135deg,
+  #faf4eb 0%,
+  #f2e5d2 50%,
+  #e7d3b6 100%
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    border: 1px solid #C6a769;
+    font-weight: 600;
+    font-size: 12px;
+}
+.choosecard{
+    border-right: 1px solid #C6a769; padding-right: 20px;
+}
