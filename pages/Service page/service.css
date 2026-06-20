@@ -20,12 +20,53 @@
     background:#C6a769;
     opacity:0.4;
 }
+.title{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:15px;
+}
+
+.line{
+    width:80px;
+    height:1px;
+    background:#d8c8a3;
+}
 
 #headtext{
     width: 450px;
     margin-top: 20px;
     font-size: 14px;
 }
+
+.hero-image-wrap{
+    position: relative;
+    overflow: hidden;
+    max-width: 600px;
+}
+
+.hero-image-wrap::before{
+    content:"";
+    position:absolute;
+    inset:0 auto 0 0;
+    width:38%;
+    background: linear-gradient(
+        90deg,
+        #ffffff 0%,
+        rgba(255,255,255,0.92) 18%,
+        rgba(255,255,255,0.55) 55%,
+        rgba(255,255,255,0) 100%
+    );
+    pointer-events:none;
+    z-index:1;
+}
+
+.hero-image{
+    display:block;
+    width:100%;
+    height:auto;
+}
+
 #disscussbtn{
     margin-top: 30px;
     background: linear-gradient(
@@ -64,9 +105,42 @@
     font-weight: 800;
     margin-top: 20px;
 }
+.process-section{
+    padding: 20px;
+}
+
+.process-timeline{
+    display: flex;
+    max-width: 1200px;
+    margin: 30px auto 0;
+    border: 1px solid #C6a769;
+    border-radius: 14px;
+    text-align: center;
+}
+
+.process-step{
+    width: 20%;
+    padding: 25px 15px;
+    border-right: 1px solid #e8dcc7;
+}
+
+.process-icon{
+    margin: 10px 0;
+    color:#777;
+    font-size: 28px;
+}
+
 .procestext{
+    color:#333;
     font-size: 12px;
     font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.process-desc{
+    font-size: 13px;
+    line-height: 1.6;
+    color:#555;
 }
 .choosetext{
     font-size: 14px;
@@ -76,23 +150,178 @@
     border: 1px solid #C6a769;
 }
 .circlenum{
-    width: 20px;
-    height: 20px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-     background: linear-gradient(
-         135deg,
-  #faf4eb 0%,
-  #f2e5d2 50%,
-  #e7d3b6 100%
-    );
+    background: #f2e5d2;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 15px;
+    margin: -45px auto 15px;
     border: 1px solid #C6a769;
     font-weight: 600;
     font-size: 12px;
+    color:#333;
 }
 .choosecard{
     border-right: 1px solid #C6a769; padding-right: 20px;
+}
+
+.why-section{
+    padding: 30px;
+}
+
+.why-box{
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 18px;
+    gap: 35px;
+    border: 1px solid #eee4d6;
+    border-radius: 14px;
+    background: #fffdf9;
+}
+
+.why-image{
+    width: 320px;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.why-content{
+    flex: 1;
+}
+
+.why-title{
+    font-size: 28px;
+    margin: 8px 0 5px;
+}
+
+.small-line{
+    width: 70px;
+    height: 2px;
+    background:#C6a769;
+    margin: 8px 0 18px;
+}
+
+.why-list{
+    display: flex;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.why-card{
+    width: 25%;
+    padding-right: 20px;
+    border-right: 1px solid #e8dcc7;
+}
+
+.why-icon{
+    color:#C6a769;
+    font-size: 28px;
+    margin-bottom: 14px;
+}
+
+.why-desc{
+    margin-top: 10px;
+    color:#444;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.ready-box{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    max-width: 1200px;
+    margin: 15px auto 0;
+    padding: 22px 70px 22px 35px;
+    border: 1px solid #eee4d6;
+    border-radius: 14px;
+    background: #fffdf9;
+}
+
+.ready-icon{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: #fff;
+    color:#C6a769;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+}
+
+.ready-title{
+    font-size: 22px;
+}
+
+.ready-desc{
+    color:#444;
+    font-size: 14px;
+}
+
+.ready-box #disscussbtn{
+    margin: 0 0 0 auto;
+    height: 42px;
+}
+
+@media (max-width: 900px){
+    .process-timeline{
+        flex-direction: column;
+    }
+
+    .process-step{
+        width: 100%;
+        padding: 25px;
+        border-right:0;
+        border-bottom:1px solid #e8dcc7;
+    }
+
+    .circlenum{
+        margin: 0 auto 15px;
+    }
+
+    .why-box{
+        flex-direction: column;
+    }
+
+    .why-image{
+        width: 100%;
+        height: 260px;
+    }
+
+    .why-list{
+        flex-direction: column;
+    }
+
+    .why-card{
+        width: 100%;
+        border-right: 0;
+        border-bottom: 1px solid #e8dcc7;
+        padding-bottom: 18px;
+    }
+
+    .ready-box{
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 25px;
+    }
+
+    .ready-box #disscussbtn{
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 520px){
+    .title{
+        gap:10px;
+    }
+
+    .line{
+        width:45px;
+    }
+
 }
