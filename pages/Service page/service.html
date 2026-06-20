@@ -32,7 +32,8 @@ https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css
     <!-- Navbar content -->
     <div class="h-20"></div>
     <!-- Header content -->
-    <section class="pl-10 flex flex-item gap-10">
+    <section  class="flex flex-col lg:flex-row justify-between items-center gap-10 ml-10"
+>
       <div>
         <div class="section-title mt-4">
           <p id="heading" class="font-montserrat">OUR SERVICES</p>
@@ -51,18 +52,22 @@ https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css
         </div>
         <button class="mt-10" id="disscussbtn">DISCUSS YOUR PROJECT <span>→</span></button>
       </div>
-      <div>
+      <div class="hero-image-wrap">
         <img
           src="./images/header-image.png"
           alt="service image"
-          class="w-150"
+          class="hero-image"
         />
       </div>
     </section>
     <!-- What we do section -->
     <section>
       <div class="align-center text-center mt-5">
+        <div class="title">
+        <div class="line"></div>
         <p id="heading" class="font-montserrat">WHAT WE DO</p>
+        <div class="line"></div>
+      </div>
         <h1 class="font-montserrat text-2xl p-3">
           Comprehensive Architectural Services
         </h1>
@@ -76,9 +81,9 @@ https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css
           </p>
         </div>
       </div>
-      <div class="grid grid-cols-4 gap-4 text-center p-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-center p-10">
         <div class="service-card flex flex-col items-center gap-2">
-          <img src="./images/service-image-1.png" alt="archi" class="w-full" />
+          <img src="./images/service-image-1.png" alt="Architectural Design" class="w-full h-full" />
           <div class="p-10">
           <p class="font-montserrat text-md font-bold ">Architectural Design</p>
           <span style="color:#C6a769">━━━</span>
@@ -90,7 +95,7 @@ https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css
           </div>
         </div>
         <div class="service-card flex flex-col items-center gap-2">
-          <img src="./images/service-image-2.png" alt="archi" class="w-full" />
+          <img src="./images/service-image-2.png" alt="Interior Design" class="w-full h-full" />
           <div class="p-10">
           <p class="font-montserrat text-md font-bold">Interior Design</p>
           <span style="color:#C6a769">━━━</span>
@@ -102,7 +107,7 @@ https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css
           </div>
         </div>
         <div class="service-card flex flex-col items-center gap-2">
-          <img src="./images/service-image-3.png" alt="archi" class="w-full" />
+          <img src="./images/service-image-3.png" alt="Construction" class="w-full h-full" />
           <div class="p-10">
           <p class="font-montserrat text-md font-bold">Construction</p>
           <span style="color:#C6a769">━━━</span>
@@ -114,7 +119,7 @@ https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css
           </div>
         </div>
         <div class="service-card flex flex-col items-center gap-2">
-          <img src="./images/service-image-4.png" alt="archi" class="w-full" />
+          <img src="./images/service-image-4.png" alt="Project Management" class="w-full h-full" />
           <div class="p-10">
           <p class="font-montserrat text-md font-bold">Project Management</p>
           <span style="color:#C6a769">━━━</span>
@@ -128,71 +133,82 @@ https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css
       </div>
     </section>
     <!-- OUR PROCESS Section -->
-    <section>
+    <section class="process-section">
       <div class="align-center text-center">
-        <p id="heading" class="font-montserrat">OUR PROCESS</p>
+        <div class="title">
+          <div class="line"></div>
+          <p id="heading" class="font-montserrat">OUR PROCESS</p>
+          <div class="line"></div>
+        </div>
         <h1 class="font-montserrat text-2xl p-3">
           A Seamless Journey from Vision to Reality
         </h1>
       </div>
-      <div style="border: 1px solid #C6a769;position:relative">
-        <div class="flex flex-item justify-center gap-10 p-10 text-center">
-          <div class="flex flex-col items-center gap-2">
-            <div class="circlenum">01</div>
-            <p class="procestext">CONSULTATION</p>
-            <p class="text-sm">Understanding your needs, goals and vision.</p>
-          </div>
-          <div class="flex flex-col items-center gap-2">
-            <div class="circlenum">02</div>
-            <p class="procestext">CONCEPT DEVELOPMENT</p>
-            <p class="text-sm">Crafting ideas and solutions that inspire.</p>
-          </div>
-          <div class="flex flex-col items-center gap-2">
-            <div class="circlenum">03</div>
-            <p class="procestext">DESIGN & PLANNING</p>
-            <p class="text-sm">Detailed planning and design with precision.</p>
-          </div>
-          <div class="flex flex-col items-center gap-2">
-            <div class="circlenum">04</div>
-            <p class="procestext">EXECUTION</p>
-            <p class="text-sm">Bringing the design to life with excellence.</p>
-          </div>
-          <div class="flex flex-col items-center gap-2">
-            <div class="circlenum">05</div>
-            <p class="procestext">COMPLETION</p>
-            <p class="text-sm">Delivering spaces that exceed expectations.</p>
-          </div>
-          </div>
+      <div class="process-timeline">
+        <div class="process-step">
+          <div class="circlenum">01</div>
+          <i class="fa-solid fa-users process-icon"></i>
+          <p class="procestext">CONSULTATION</p>
+          <p class="process-desc">Understanding your needs, goals and vision.</p>
+        </div>
+        <div class="process-step">
+          <div class="circlenum">02</div>
+          <i class="fa-regular fa-lightbulb process-icon"></i>
+          <p class="procestext">CONCEPT DEVELOPMENT</p>
+          <p class="process-desc">Crafting ideas and solutions that inspire.</p>
+        </div>
+        <div class="process-step">
+          <div class="circlenum">03</div>
+          <i class="fa-regular fa-pen-to-square process-icon"></i>
+          <p class="procestext">DESIGN & PLANNING</p>
+          <p class="process-desc">Detailed planning and design with precision.</p>
+        </div>
+        <div class="process-step">
+          <div class="circlenum">04</div>
+          <i class="fa-solid fa-trowel-bricks process-icon"></i>
+          <p class="procestext">EXECUTION</p>
+          <p class="process-desc">Bringing the design to life with excellence.</p>
+        </div>
+        <div class="process-step">
+          <div class="circlenum">05</div>
+          <i class="fa-solid fa-house-circle-check process-icon"></i>
+          <p class="procestext">COMPLETION</p>
+          <p class="process-desc">Delivering spaces that exceed expectations.</p>
+        </div>
       </div>
     </section>
     <!-- WHY choose us section -->
-    <section>
-      <div class="flex flex-item mt-5 p-10 gap-10">
-        <img src="./images/choose_us.png" alt="Why Choose Us" style="width:400px;height:200px;border-radius:10px;"/>
-        <div>
+    <section class="why-section">
+      <div class="why-box">
+        <img class="why-image" src="./images/choose_us.png" alt="Why Choose Us" />
+        <div class="why-content">
           <p id="heading" class="font-montserrat">WHY CHOOSE US</p>
-          <h1 class="font-montserrat text-2xl">
-            Experience, Innovation. Integrity.
+          <h1 class="font-montserrat why-title">
+            Experience. Innovation. <span class="italic golden-text">Integrity.</span>
           </h1>
-          <span style="color:#C6a769">━━━━━━</span>
-           <div class="flex flex-item justify-between gap-10 mt-5">
-          <div class="choosecard">
+          <div class="small-line"></div>
+           <div class="why-list">
+          <div class="why-card">
+            <i class="fa-regular fa-user why-icon"></i>
             <p class="choosetext">Expert Team</p>
-            <p class="text-sm mt-2">Experienced architects and designers dedicated to excellence.</p>
+            <p class="why-desc">Experienced architects and designers dedicated to excellence.</p>
           </div>
-          <div class="choosecard">
+          <div class="why-card">
+            <i class="fa-regular fa-sun why-icon"></i>
             <p class="choosetext">Innovative Solutions</p>
-            <p class="text-sm mt-2">Creative and sustainable designs tailored to your vision.</p>
+            <p class="why-desc">Creative and sustainable designs tailored to your vision.</p>
           </div>
-          <div class="choosecard">
+          <div class="why-card">
+            <i class="fa-regular fa-star why-icon"></i>
             <p class="choosetext">Quality Assurance</p>
-            <p class="text-sm mt-2">
+            <p class="why-desc">
               Commitment to the highest standards in every detail we deliver.
             </p>
           </div>
-          <div>
+          <div class="why-card">
+            <i class="fa-solid fa-shield-halved why-icon"></i>
             <p class="choosetext">Client-Centric Approach</p>
-            <p class="text-sm mt-2">
+            <p class="why-desc">
               Your satisfaction is our priority at every step of the journey.
             </p>
           </div>
@@ -202,15 +218,15 @@ https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css
       </div>
     </section>
     <!-- Ready Section -->
-     <div class="">
-    <div class="flex flex-item ml-10 justify-between">
-      <div class="flex flex-col gap-2">
-      <h1 class="font-montserrat text-xl">Ready to start your project?</h1>
-        <p class="text-sm">Let's create something extraordinary together.</p>
-        </div>
-        <button id="disscussbtn" style="height:40px;">GET IN TOUCH<span>→</span></button>
-      </div>
-      </div>
+     <div class="ready-box">
+    <div class="ready-icon">
+      <i class="fa-regular fa-building"></i>
     </div>
+      <div>
+      <h1 class="font-montserrat ready-title">Ready to start your project?</h1>
+        <p class="ready-desc">Let's create something extraordinary together.</p>
+        </div>
+        <button id="disscussbtn" class="ready-btn">GET IN TOUCH<span>→</span></button>
+      </div>
   </body>
 </html>
