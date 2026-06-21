@@ -15,6 +15,23 @@ document.addEventListener('DOMContentLoaded', () => {
     infinite: false,
   });
 
+  // Register GSAP plugins first
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Properly integrate Lenis with GSAP ScrollTrigger via scrollerProxy
+  ScrollTrigger.scrollerProxy(document.body, {
+    scrollTop(value) {
+      if (arguments.length) {
+        lenis.scrollTo(value, { immediate: true });
+      }
+      return lenis.scroll;
+    },
+    getBoundingClientRect() {
+      return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+    },
+    pinType: document.body.style.transform ? 'transform' : 'fixed'
+  });
+
   // Bind Lenis scroll event to GSAP's ScrollTrigger
   lenis.on('scroll', ScrollTrigger.update);
 
@@ -105,14 +122,11 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ==========================================================================
      4. GSAP INTRO & SCROLL TRIGGER ANIMATIONS
      ========================================================================== */
-  // Register GSAP plugins
-  gsap.registerPlugin(ScrollTrigger);
 
   // Hero Stagger Fade-In (Page Load)
   const heroTL = gsap.timeline({ defaults: { ease: 'power4.out', duration: 1.5 } });
   
   heroTL.from('.header', { y: -50, opacity: 0, delay: 0.2 })
-        .from('.section-label', { y: 20, opacity: 0 }, '-=1')
         .from('.hero-title span', { y: 40, opacity: 0, stagger: 0.2 }, '-=1.2')
         .from('.hero-content .section-desc', { y: 30, opacity: 0 }, '-=1')
         .from('.hero-actions', { y: 30, opacity: 0 }, '-=1')
@@ -126,7 +140,8 @@ document.addEventListener('DOMContentLoaded', () => {
       trigger: '#hero',
       start: 'top top',
       end: 'bottom top',
-      scrub: true
+      scrub: true,
+      scroller: document.body
     }
   });
 
@@ -138,7 +153,8 @@ document.addEventListener('DOMContentLoaded', () => {
       trigger: '#about',
       start: 'top bottom',
       end: 'bottom top',
-      scrub: true
+      scrub: true,
+      scroller: document.body
     }
   });
 
@@ -150,7 +166,10 @@ document.addEventListener('DOMContentLoaded', () => {
     ease: 'power3.out',
     scrollTrigger: {
       trigger: '#about',
-      start: 'top 75%'
+      start: 'top 75%',
+      once: true,
+      scroller: document.body,
+      toggleActions: 'play none none none'
     }
   });
 
@@ -163,7 +182,10 @@ document.addEventListener('DOMContentLoaded', () => {
     ease: 'power3.out',
     scrollTrigger: {
       trigger: '#projects-grid',
-      start: 'top 80%'
+      start: 'top 85%',
+      once: true,
+      scroller: document.body,
+      toggleActions: 'play none none none'
     }
   });
 
@@ -176,7 +198,10 @@ document.addEventListener('DOMContentLoaded', () => {
     ease: 'power3.out',
     scrollTrigger: {
       trigger: '#services-grid',
-      start: 'top 85%'
+      start: 'top 90%',
+      once: true,
+      scroller: document.body,
+      toggleActions: 'play none none none'
     }
   });
 
@@ -196,6 +221,8 @@ document.addEventListener('DOMContentLoaded', () => {
       scrollTrigger: {
         trigger: '#stats',
         start: 'top 85%',
+        once: true,
+        scroller: document.body,
         toggleActions: 'play none none none'
       }
     });
@@ -211,7 +238,8 @@ document.addEventListener('DOMContentLoaded', () => {
         scrollTrigger: {
           trigger: '#stats',
           start: 'top 85%',
-          once: true
+          once: true,
+          scroller: document.body
         },
         onUpdate: () => {
           num.textContent = Math.ceil(counterObj.val) + '+';
@@ -231,7 +259,10 @@ document.addEventListener('DOMContentLoaded', () => {
     ease: 'power3.out',
     scrollTrigger: {
       trigger: '#cta',
-      start: 'top 90%'
+      start: 'top 90%',
+      once: true,
+      scroller: document.body,
+      toggleActions: 'play none none none'
     }
   });
 
@@ -246,9 +277,8 @@ document.addEventListener('DOMContentLoaded', () => {
     ease: 'sine.inOut'
   });
 
-  // Refresh ScrollTrigger on window load to recalculate element offsets
-  window.addEventListener('load', () => {
-    ScrollTrigger.refresh();
-  });
+  // Refresh ScrollTrigger after Lenis is fully ready
+  ScrollTrigger.addEventListener('refresh', () => lenis.resize());
+  ScrollTrigger.refresh();
 
 });
