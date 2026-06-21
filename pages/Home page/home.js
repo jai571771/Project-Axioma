@@ -75,7 +75,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* ==========================================================================
-     3. GSAP INTRO & SCROLL TRIGGER ANIMATIONS
+     3. VIDEO MODAL SHOWREEL LOGIC
+     ========================================================================== */
+  const videoModal = document.getElementById('video-modal');
+  const playShowreelBtn = document.getElementById('btn-play-showreel');
+  const modalCloseBtn = document.getElementById('modal-close');
+
+  if (videoModal && playShowreelBtn && modalCloseBtn) {
+    playShowreelBtn.addEventListener('click', () => {
+      videoModal.classList.add('open');
+      lenis.stop();
+    });
+
+    modalCloseBtn.addEventListener('click', () => {
+      videoModal.classList.remove('open');
+      lenis.start();
+    });
+
+    // Close on overlay background click
+    videoModal.addEventListener('click', (e) => {
+      if (e.target === videoModal) {
+        videoModal.classList.remove('open');
+        lenis.start();
+      }
+    });
+  }
+
+
+  /* ==========================================================================
+     4. GSAP INTRO & SCROLL TRIGGER ANIMATIONS
      ========================================================================== */
   // Register GSAP plugins
   gsap.registerPlugin(ScrollTrigger);
@@ -102,70 +130,100 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Parallax Effect on Why Choose Us Image
-  gsap.to('#choose-img', {
+  // Parallax Effect on About Image
+  gsap.to('#about-img', {
     yPercent: 8,
     ease: 'none',
     scrollTrigger: {
-      trigger: '#why-choose-us',
+      trigger: '#about',
       start: 'top bottom',
       end: 'bottom top',
       scrub: true
     }
   });
 
-  // Stagger entry reveal for Services grid
-  gsap.from('.service-card', {
+  // Scroll Reveal for About Us Section Content
+  gsap.from('#about-content', {
+    x: 40,
+    opacity: 0,
+    duration: 1.2,
+    ease: 'power3.out',
+    scrollTrigger: {
+      trigger: '#about',
+      start: 'top 75%'
+    }
+  });
+
+  // Stagger entry reveal for Projects
+  gsap.from('.project-card', {
     y: 50,
     opacity: 0,
     stagger: 0.15,
     duration: 1.2,
     ease: 'power3.out',
     scrollTrigger: {
-      trigger: '#services-grid',
+      trigger: '#projects-grid',
       start: 'top 80%'
     }
   });
 
-  // Stagger entry reveal for Process steps
-  gsap.from('.timeline-step', {
-    y: 40,
+  // Stagger entry reveal for Service cards
+  gsap.from('.service-card', {
+    y: 45,
     opacity: 0,
     stagger: 0.15,
     duration: 1.2,
     ease: 'power3.out',
     scrollTrigger: {
-      trigger: '#timeline-container',
-      start: 'top 80%'
-    }
-  });
-
-  // Scroll Reveal for Choose Us Content
-  gsap.from('#choose-content', {
-    x: 40,
-    opacity: 0,
-    duration: 1.2,
-    ease: 'power3.out',
-    scrollTrigger: {
-      trigger: '#why-choose-us',
-      start: 'top 75%'
-    }
-  });
-
-  // Stagger reveal Choose points
-  gsap.from('.choosecard', {
-    y: 30,
-    opacity: 0,
-    stagger: 0.12,
-    duration: 1.2,
-    ease: 'power3.out',
-    scrollTrigger: {
-      trigger: '.choose-points-grid',
+      trigger: '#services-grid',
       start: 'top 85%'
     }
   });
 
-  // Stagger reveal CTA banner
+
+  /* ==========================================================================
+     5. STATISTICS COUNTER ANIMATION (SECTION 2)
+     ========================================================================== */
+  const statsCard = document.getElementById('stats-card');
+  const statNumbers = document.querySelectorAll('.stat-number');
+
+  if (statsCard && statNumbers.length > 0) {
+    gsap.from(statsCard, {
+      y: 60,
+      opacity: 0,
+      duration: 1.2,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '#stats',
+        start: 'top 85%',
+        toggleActions: 'play none none none'
+      }
+    });
+
+    statNumbers.forEach(num => {
+      const target = parseInt(num.getAttribute('data-target'));
+      let counterObj = { val: 0 };
+      
+      gsap.to(counterObj, {
+        val: target,
+        duration: 2.5,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: '#stats',
+          start: 'top 85%',
+          once: true
+        },
+        onUpdate: () => {
+          num.textContent = Math.ceil(counterObj.val) + '+';
+        }
+      });
+    });
+  }
+
+
+  /* ==========================================================================
+     6. FINAL CTA FLOATING EFFECT (SECTION 6)
+     ========================================================================== */
   gsap.from('.cta-banner', {
     scale: 0.95,
     opacity: 0,

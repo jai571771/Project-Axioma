@@ -1,216 +1,383 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Service</title>
-    <!-- Font Awesome CDN Link -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <!-- Tailwind Css -->
-    <link
-      href="
-https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css
-"
-      rel="stylesheet"
-    />
-    <link href="service.css" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Young+Serif&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <!-- Navbar content -->
-    <div class="h-20"></div>
-    <!-- Header content -->
-    <section class="pl-10 flex flex-item gap-10">
-      <div>
-        <div class="section-title mt-4">
-          <p id="heading" class="font-montserrat">OUR SERVICES</p>
-        </div>
-        <h1 class="font-montserrat text-4xl">Designing Spaces.</h1>
-        <h1 class="font-montserrat text-4xl">
-          Delivering
-          <span class="italic font-bold golden-text">Excellence.</span>
-        </h1>
-        <div id="headtext">
-          <p class="font-montserrat text-md">
-            From concept to completion, we offer end-to-end architectural
-            services that blend creativity,functionality and precision to bring
-            your vision to life.
-          </p>
-        </div>
-        <button class="mt-10" id="disscussbtn">DISCUSS YOUR PROJECT <span>→</span></button>
-      </div>
-      <div>
-        <img
-          src="./images/header-image.png"
-          alt="service image"
-          class="w-150"
-        />
-      </div>
-    </section>
-    <!-- What we do section -->
-    <section>
-      <div class="align-center text-center mt-5">
-        <p id="heading" class="font-montserrat">WHAT WE DO</p>
-        <h1 class="font-montserrat text-2xl p-3">
-          Comprehensive Architectural Services
-        </h1>
-        <div
-          class="flex flex-item justify-center"
-          style="width: 40%; margin: 0 auto"
-        >
-          <p class="font-montserrat text-sm">
-            We provide a wide range of architectural and design services
-            tailored to meet the unique needs of every project.
-          </p>
-        </div>
-      </div>
-      <div class="grid grid-cols-4 gap-4 text-center p-10">
-        <div class="service-card flex flex-col items-center gap-2">
-          <img src="./images/service-image-1.png" alt="archi" class="w-full" />
-          <div class="p-10">
-          <p class="font-montserrat text-md font-bold ">Architectural Design</p>
-          <span style="color:#C6a769">━━━</span>
-          <p>
-            Innovative and functional designs that harmonize aesthetics,
-            sustainability and purpose.
-          </p>
-          <p id="learntext">LEARN MORE <span>→</span></p>
-          </div>
-        </div>
-        <div class="service-card flex flex-col items-center gap-2">
-          <img src="./images/service-image-2.png" alt="archi" class="w-full" />
-          <div class="p-10">
-          <p class="font-montserrat text-md font-bold">Interior Design</p>
-          <span style="color:#C6a769">━━━</span>
-          <p>
-            Thoughtfully designed interiors that reflect your personality and
-            elevate everday living.
-          </p>
-          <p id="learntext">LEARN MORE <span>→</span></p>
-          </div>
-        </div>
-        <div class="service-card flex flex-col items-center gap-2">
-          <img src="./images/service-image-3.png" alt="archi" class="w-full" />
-          <div class="p-10">
-          <p class="font-montserrat text-md font-bold">Construction</p>
-          <span style="color:#C6a769">━━━</span>
-          <p>
-            High-quality construction with ateendtion to details,safety and
-            timely delivery.
-          </p>
-          <p id="learntext">LEARN MORE <span>→</span></p>
-          </div>
-        </div>
-        <div class="service-card flex flex-col items-center gap-2">
-          <img src="./images/service-image-4.png" alt="archi" class="w-full" />
-          <div class="p-10">
-          <p class="font-montserrat text-md font-bold">Project Management</p>
-          <span style="color:#C6a769">━━━</span>
-          <p>
-            Seamless coordination and management from start to finish ensuring a
-            stress-free experience.
-          </p>
-          <p id="learntext">LEARN MORE <span>→</span></p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- OUR PROCESS Section -->
-    <section>
-      <div class="align-center text-center">
-        <p id="heading" class="font-montserrat">OUR PROCESS</p>
-        <h1 class="font-montserrat text-2xl p-3">
-          A Seamless Journey from Vision to Reality
-        </h1>
-      </div>
-      <div style="border: 1px solid #C6a769;position:relative">
-        <div class="flex flex-item justify-center gap-10 p-10 text-center">
-          <div class="flex flex-col items-center gap-2">
-            <div class="circlenum">01</div>
-            <p class="procestext">CONSULTATION</p>
-            <p class="text-sm">Understanding your needs, goals and vision.</p>
-          </div>
-          <div class="flex flex-col items-center gap-2">
-            <div class="circlenum">02</div>
-            <p class="procestext">CONCEPT DEVELOPMENT</p>
-            <p class="text-sm">Crafting ideas and solutions that inspire.</p>
-          </div>
-          <div class="flex flex-col items-center gap-2">
-            <div class="circlenum">03</div>
-            <p class="procestext">DESIGN & PLANNING</p>
-            <p class="text-sm">Detailed planning and design with precision.</p>
-          </div>
-          <div class="flex flex-col items-center gap-2">
-            <div class="circlenum">04</div>
-            <p class="procestext">EXECUTION</p>
-            <p class="text-sm">Bringing the design to life with excellence.</p>
-          </div>
-          <div class="flex flex-col items-center gap-2">
-            <div class="circlenum">05</div>
-            <p class="procestext">COMPLETION</p>
-            <p class="text-sm">Delivering spaces that exceed expectations.</p>
-          </div>
-          </div>
-      </div>
-    </section>
-    <!-- WHY choose us section -->
-    <section>
-      <div class="flex flex-item mt-5 p-10 gap-10">
-        <img src="./images/choose_us.png" alt="Why Choose Us" style="width:400px;height:200px;border-radius:10px;"/>
-        <div>
-          <p id="heading" class="font-montserrat">WHY CHOOSE US</p>
-          <h1 class="font-montserrat text-2xl">
-            Experience, Innovation. Integrity.
-          </h1>
-          <span style="color:#C6a769">━━━━━━</span>
-           <div class="flex flex-item justify-between gap-10 mt-5">
-          <div class="choosecard">
-            <p class="choosetext">Expert Team</p>
-            <p class="text-sm mt-2">Experienced architects and designers dedicated to excellence.</p>
-          </div>
-          <div class="choosecard">
-            <p class="choosetext">Innovative Solutions</p>
-            <p class="text-sm mt-2">Creative and sustainable designs tailored to your vision.</p>
-          </div>
-          <div class="choosecard">
-            <p class="choosetext">Quality Assurance</p>
-            <p class="text-sm mt-2">
-              Commitment to the highest standards in every detail we deliver.
-            </p>
-          </div>
-          <div>
-            <p class="choosetext">Client-Centric Approach</p>
-            <p class="text-sm mt-2">
-              Your satisfaction is our priority at every step of the journey.
-            </p>
-          </div>
-        </div>
-        </div>
-       
-      </div>
-    </section>
-    <!-- Ready Section -->
-     <div class="">
-    <div class="flex flex-item ml-10 justify-between">
-      <div class="flex flex-col gap-2">
-      <h1 class="font-montserrat text-xl">Ready to start your project?</h1>
-        <p class="text-sm">Let's create something extraordinary together.</p>
-        </div>
-        <button id="disscussbtn" style="height:40px;">GET IN TOUCH<span>→</span></button>
-      </div>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services — Axioma Construction & Architecture</title>
+  <meta name="description"
+    content="Discover Axioma's architectural services, including custom architectural designs, luxury interiors, high-end construction, and seamless project management.">
+
+  <!-- Preconnect Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,500;1,600&family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="./service.css">
+</head>
+
+<body>
+
+  <!-- Sticky Blurred Glassmorphic Navbar -->
+  <header class="header" id="header">
+    <div class="container nav-container">
+      <a href="../Home page/home.html" class="nav-logo">
+        <img src="./assets/Axioma logo.png" alt="Axioma Logo" class="logo-img">
+        <span>AXIOMA</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../Home page/home.html">Home</a></li>
+        <li><a href="../Project page/project.html">Projects</a></li>
+        <li><a href="../Experience page/experience.html">Experience</a></li>
+        <li><a href="./service.html" class="active">Services</a></li>
+        <li><a href="../AboutUs page/about.html">About</a></li>
+        <li><a href="../Contact page/contact.html">Contact</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <a href="../Contact page/contact.html" class="nav-connect-btn">Let's Connect</a>
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle Navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </div>
-  </body>
+  </header>
+
+  <!-- Mobile Navigation Overlay -->
+  <div class="mobile-nav-overlay" id="mobile-nav-overlay">
+    <ul class="mobile-nav-links">
+      <li><a href="../Home page/home.html">Home</a></li>
+      <li><a href="../Project page/project.html">Projects</a></li>
+      <li><a href="../Experience page/experience.html">Experience</a></li>
+      <li><a href="./service.html" class="active">Services</a></li>
+      <li><a href="../AboutUs page/about.html">About Us</a></li>
+      <li><a href="../Contact page/contact.html">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Decorative blur filters -->
+  <div class="floating-decor decor-1"></div>
+  <div class="floating-decor decor-2"></div>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section" id="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <span class="section-label">Our Services</span>
+        <h1 class="hero-title" id="hero-title">
+          <span class="title-light">Designing Spaces.</span>
+          <span class="title-bold">Delivering <span class="italic-gold">Excellence.</span></span>
+        </h1>
+        <p class="section-desc" style="margin-bottom: 2.5rem;">
+          From concept to completion, we offer end-to-end architectural services that blend creativity, functionality, and precision to bring your vision to life.
+        </p>
+        <div class="hero-actions">
+          <a href="../Contact page/contact.html" class="btn btn-primary" id="discuss-project-btn">
+            Discuss Your Project <span class="btn-icon">&rarr;</span>
+          </a>
+        </div>
+      </div>
+      <div class="hero-visual" id="hero-visual">
+        <div class="hero-img-wrapper">
+          <img src="./images/header-image.png" alt="Grand Luxury Building Facade" id="hero-img">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE DO SECTION -->
+  <section class="what-we-do-section" id="what-we-do">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 5rem;">
+        <span class="section-label">What We Do</span>
+        <h2 class="section-title">Comprehensive Architectural Services</h2>
+        <p class="section-desc" style="margin: 0 auto;">We provide a wide range of architectural and design services tailored to meet the unique needs of every luxury project.</p>
+      </div>
+
+      <div class="services-grid" id="services-grid">
+        <!-- Service Card 1 -->
+        <div class="service-card">
+          <div class="service-img-wrapper">
+            <img src="./images/service-image-1.png" alt="Architectural Design image">
+          </div>
+          <div class="service-card-content">
+            <h3 class="service-card-title">Architectural Design</h3>
+            <div class="service-divider"></div>
+            <p class="service-card-desc">Innovative and functional designs that harmonize aesthetics, sustainability, and purpose.</p>
+            <a href="../Contact page/contact.html" class="service-learn-link">Learn More &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Service Card 2 -->
+        <div class="service-card">
+          <div class="service-img-wrapper">
+            <img src="./images/service-image-2.png" alt="Interior Design image">
+          </div>
+          <div class="service-card-content">
+            <h3 class="service-card-title">Interior Design</h3>
+            <div class="service-divider"></div>
+            <p class="service-card-desc">Thoughtfully designed interiors that reflect your personality and elevate everyday living.</p>
+            <a href="../Contact page/contact.html" class="service-learn-link">Learn More &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Service Card 3 -->
+        <div class="service-card">
+          <div class="service-img-wrapper">
+            <img src="./images/service-image-3.png" alt="Construction image">
+          </div>
+          <div class="service-card-content">
+            <h3 class="service-card-title">Construction</h3>
+            <div class="service-divider"></div>
+            <p class="service-card-desc">High-quality construction with absolute attention to details, structural safety, and timely delivery.</p>
+            <a href="../Contact page/contact.html" class="service-learn-link">Learn More &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Service Card 4 -->
+        <div class="service-card">
+          <div class="service-img-wrapper">
+            <img src="./images/service-image-4.png" alt="Project Management image">
+          </div>
+          <div class="service-card-content">
+            <h3 class="service-card-title">Project Management</h3>
+            <div class="service-divider"></div>
+            <p class="service-card-desc">Seamless coordination and logistics management from start to finish, ensuring a stress-free experience.</p>
+            <a href="../Contact page/contact.html" class="service-learn-link">Learn More &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS TIMELINE SECTION -->
+  <section class="process-section" id="process">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 5rem;">
+        <span class="section-label">Our Process</span>
+        <h2 class="section-title">A Seamless Journey from Vision to Reality</h2>
+      </div>
+
+      <div class="timeline-container" id="timeline-container">
+        <!-- Step 1 -->
+        <div class="timeline-step">
+          <div class="circlenum">01</div>
+          <h4 class="procestext">Consultation</h4>
+          <p class="process-desc">Understanding your spatial needs, project scale, goals, and core styling vision.</p>
+        </div>
+        <!-- Step 2 -->
+        <div class="timeline-step">
+          <div class="circlenum">02</div>
+          <h4 class="procestext">Concept Development</h4>
+          <p class="process-desc">Crafting primary draft blueprints, spatial workflows, and solutions that inspire.</p>
+        </div>
+        <!-- Step 3 -->
+        <div class="timeline-step">
+          <div class="circlenum">03</div>
+          <h4 class="procestext">Design & Planning</h4>
+          <p class="process-desc">Meticulous planning, materials sourcing, structural calculations, and design detailing.</p>
+        </div>
+        <!-- Step 4 -->
+        <div class="timeline-step">
+          <div class="circlenum">04</div>
+          <h4 class="procestext">Execution</h4>
+          <p class="process-desc">Translating approved layouts into brick, mortar, and luxury frameworks with excellence.</p>
+        </div>
+        <!-- Step 5 -->
+        <div class="timeline-step">
+          <div class="circlenum">05</div>
+          <h4 class="procestext">Completion</h4>
+          <p class="process-desc">Final detailing check, code approvals, developer handoff, and delivering ready spaces.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US SECTION -->
+  <section class="why-choose-us-section" id="why-choose-us">
+    <div class="container choose-grid">
+      <div class="choose-visual" id="choose-visual">
+        <div class="choose-img-wrapper">
+          <img src="./images/choose_us.png" alt="Axioma Architects Planning Session" id="choose-img">
+        </div>
+      </div>
+
+      <div class="choose-content" id="choose-content">
+        <span class="section-label">Why Choose Us</span>
+        <h2 class="section-title">Experience, Innovation, <span class="italic-gold">Integrity.</span></h2>
+        
+        <div class="choose-points-grid">
+          <!-- Point 1 -->
+          <div class="choosecard">
+            <h4 class="choosetext">Expert Team</h4>
+            <p class="choose-desc-text">Experienced luxury architects and designers dedicated to spatial excellence.</p>
+          </div>
+          <!-- Point 2 -->
+          <div class="choosecard">
+            <h4 class="choosetext">Innovative Solutions</h4>
+            <p class="choose-desc-text">Creative, smart-climate designs tailored uniquely to your structural vision.</p>
+          </div>
+          <!-- Point 3 -->
+          <div class="choosecard">
+            <h4 class="choosetext">Quality Assurance</h4>
+            <p class="choose-desc-text">Commitment to the highest international standards in every detail we construct.</p>
+          </div>
+          <!-- Point 4 -->
+          <div class="choosecard" style="border-right: none;">
+            <h4 class="choosetext">Client-Centric</h4>
+            <p class="choose-desc-text">Your satisfaction is our absolute priority at every step of the building journey.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="cta-section" id="cta">
+    <div class="container">
+      <div class="cta-banner">
+        <div class="cta-content">
+          <span class="section-label" style="color: var(--color-gold);">Let's Create Together</span>
+          <h2 class="cta-title">Ready to start your project?<br>Let's create something <span class="gold-italic">extraordinary</span> together.</h2>
+        </div>
+        <div class="cta-btn-wrap">
+          <a href="../Contact page/contact.html" class="btn btn-primary"
+            style="background: white; color: var(--bg-dark); box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+            Get In Touch &rarr;
+          </a>
+        </div>
+
+        <!-- Custom animated SVG plant vector decoration -->
+        <svg class="plant-decor" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M100 190C100 130 90 70 40 40M100 190C100 120 115 80 160 50M100 190C100 150 95 120 75 100M100 190C100 145 108 120 125 105"
+            stroke="#C6A769" stroke-width="2" stroke-linecap="round" />
+          <path d="M40 40C30 50 35 70 50 65C65 60 60 40 40 40ZM160 50C170 60 165 80 150 75C135 70 140 50 160 50Z"
+            fill="#C6A769" opacity="0.6" />
+          <path
+            d="M75 100C65 110 70 120 80 115C90 110 85 95 75 100ZM125 105C135 115 130 125 120 120C110 115 115 100 125 105Z"
+            fill="#C6A769" opacity="0.6" />
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="../Home page/home.html" class="footer-logo">
+            <img src="./assets/Axioma logo.png" alt="Axioma Logo" class="logo-img">
+            <span>AXIOMA</span>
+          </a>
+          <p class="footer-desc">We create timeless architectural experiences through innovation, design, and excellence.</p>
+          <div class="footer-socials">
+            <a href="https://linkedin.com" class="social-link" target="_blank" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+              </svg>
+            </a>
+            <a href="https://instagram.com" class="social-link" target="_blank" aria-label="Instagram">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg>
+            </a>
+            <a href="https://behance.net" class="social-link" target="_blank" aria-label="Behance">
+              <svg viewBox="0 0 24 24">
+                <path d="M22 9.702c0-1.34-.735-2.702-2.753-2.702-2.022 0-2.754 1.362-2.754 2.702h5.507zm-12.755-1.722c0-.527-.478-.854-1.192-.854h-2.128v1.733h2.128c.714 0 1.192-.352 1.192-.879zm.344 3.758c0-.606-.511-.983-1.298-.983h-2.472v1.986h2.472c.787 0 1.298-.395 1.298-1.003zm10.158-4.521c3.151 0 4.253 2.115 4.253 4.293 0 2.479-1.282 4.492-4.527 4.492-3.189 0-4.473-2.05-4.473-4.492 0-2.369 1.261-4.293 4.747-4.293zm-14.747-2.217h-5v13h5.45c3.279 0 4.55-1.613 4.55-3.313 0-1.129-.533-2.317-1.921-2.825 1.161-.555 1.571-1.579 1.571-2.673 0-1.713-1.205-4.189-4.65-4.189zm14.757.702c-.93 0-1.396.155-1.396.551h2.791c0-.396-.465-.551-1.395-.551zm-7.757-3.702h12v1h-12v-1z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="../Home page/home.html">Home</a></li>
+            <li><a href="../Project page/project.html">Projects</a></li>
+            <li><a href="../Experience page/experience.html">Experience</a></li>
+            <li><a href="./service.html">Services</a></li>
+            <li><a href="../AboutUs page/about.html">About Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Services</h4>
+          <ul class="footer-links">
+            <li><a href="./service.html">Architectural Design</a></li>
+            <li><a href="./service.html">Interior Design</a></li>
+            <li><a href="./service.html">Construction</a></li>
+            <li><a href="./service.html">Project Management</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Contact Us</h4>
+          <div class="footer-contact-info">
+            <div class="contact-item">
+              <svg viewBox="0 0 24 24">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+              <span>+91 98765 43210</span>
+            </div>
+            <div class="contact-item">
+              <svg viewBox="0 0 24 24">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+              <span>hello@architecture.com</span>
+            </div>
+            <div class="contact-item">
+              <svg viewBox="0 0 24 24">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              <span>123, Design Street, Mumbai, India</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Newsletter</h4>
+          <p class="footer-newsletter-text">Subscribe to our newsletter for luxury updates, concepts, and exclusive releases.</p>
+          <form class="newsletter-form" id="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed successfully!');">
+            <input type="email" placeholder="Your email address" class="newsletter-input" required aria-label="Email Address">
+            <button class="newsletter-btn" type="submit" aria-label="Subscribe">
+              <svg viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Axioma. All Rights Reserved.</span>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms & Conditions</a>
+        </div>
+        <button class="scroll-top-btn" id="scroll-top-btn" aria-label="Scroll to Top">
+          <svg viewBox="0 0 24 24">
+            <path d="M18 15l-6-6-6 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- GSAP, ScrollTrigger and Lenis Smooth Scroll Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+
+  <!-- Custom Service Page Script -->
+  <script src="./service.js"></script>
+</body>
+
 </html>

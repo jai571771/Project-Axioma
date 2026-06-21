@@ -32,6 +32,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Smooth scroll links
+  const viewStoryBtn = document.getElementById('view-story-btn');
+  if (viewStoryBtn) {
+    viewStoryBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.querySelector('#story');
+      if (target) {
+        lenis.scrollTo(target, { duration: 1.5, offset: -80 });
+      }
+    });
+  }
+
 
   /* ==========================================================================
      2. NAVIGATION & NAVBAR LOGIC
@@ -80,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Register GSAP plugins
   gsap.registerPlugin(ScrollTrigger);
 
-  // Hero Stagger Fade-In (Page Load)
+  // Hero Stagger Fade-In
   const heroTL = gsap.timeline({ defaults: { ease: 'power4.out', duration: 1.5 } });
   
   heroTL.from('.header', { y: -50, opacity: 0, delay: 0.2 })
@@ -102,70 +114,136 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Parallax Effect on Why Choose Us Image
-  gsap.to('#choose-img', {
+  // Parallax Effect on MVV Image
+  gsap.to('#mvv-img', {
     yPercent: 8,
     ease: 'none',
     scrollTrigger: {
-      trigger: '#why-choose-us',
+      trigger: '#story',
       start: 'top bottom',
       end: 'bottom top',
       scrub: true
     }
   });
 
-  // Stagger entry reveal for Services grid
-  gsap.from('.service-card', {
+  // Stagger entry reveal for MVV cards
+  gsap.fromTo('.mvv-card', 
+    { y: 40, opacity: 0 },
+    {
+      y: 0,
+      opacity: 1,
+      stagger: 0.15,
+      duration: 1.2,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '#story',
+        start: 'top 75%'
+      }
+    }
+  );
+
+  // Stagger entry reveal for Philosophy pillars
+  gsap.from('.pillar-card', {
+    y: 55,
+    opacity: 0,
+    stagger: 0.15,
+    duration: 1.2,
+    ease: 'power3.out',
+    scrollTrigger: {
+      trigger: '#pillars-grid',
+      start: 'top 85%'
+    }
+  });
+
+
+  /* ==========================================================================
+     4. STATISTICS COUNTER ANIMATION (SECTION 3)
+     ========================================================================== */
+  const statsCard = document.getElementById('stats-card');
+  const statNumbers = document.querySelectorAll('.stat-number');
+
+  if (statsCard && statNumbers.length > 0) {
+    gsap.from(statsCard, {
+      y: 60,
+      opacity: 0,
+      duration: 1.2,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '#stats',
+        start: 'top 85%',
+        toggleActions: 'play none none none'
+      }
+    });
+
+    statNumbers.forEach(num => {
+      const target = parseInt(num.getAttribute('data-target'));
+      let counterObj = { val: 0 };
+      
+      gsap.to(counterObj, {
+        val: target,
+        duration: 2.5,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: '#stats',
+          start: 'top 85%',
+          once: true
+        },
+        onUpdate: () => {
+          num.textContent = Math.ceil(counterObj.val) + '+';
+        }
+      });
+    });
+  }
+
+
+  /* ==========================================================================
+     5. TEAM EXPAND CARDS LOGIC (SECTION 5)
+     ========================================================================== */
+  const teamCards = document.querySelectorAll('.team-card');
+  
+  teamCards.forEach(card => {
+    const expandBtn = card.querySelector('.team-expand-btn');
+    if (expandBtn) {
+      expandBtn.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevent closing card from bubbling
+        
+        const isExpanded = card.classList.contains('expanded');
+        
+        // Collapse all other expanded cards first
+        teamCards.forEach(c => {
+          if (c !== card) c.classList.remove('expanded');
+        });
+
+        // Toggle state
+        if (isExpanded) {
+          card.classList.remove('expanded');
+        } else {
+          card.classList.add('expanded');
+        }
+        
+        // Recalculate heights for scroll-trigger offsets
+        ScrollTrigger.refresh();
+      });
+    }
+  });
+
+  // Stagger reveal team cards
+  gsap.from('.team-card', {
     y: 50,
-    opacity: 0,
-    stagger: 0.15,
-    duration: 1.2,
-    ease: 'power3.out',
-    scrollTrigger: {
-      trigger: '#services-grid',
-      start: 'top 80%'
-    }
-  });
-
-  // Stagger entry reveal for Process steps
-  gsap.from('.timeline-step', {
-    y: 40,
-    opacity: 0,
-    stagger: 0.15,
-    duration: 1.2,
-    ease: 'power3.out',
-    scrollTrigger: {
-      trigger: '#timeline-container',
-      start: 'top 80%'
-    }
-  });
-
-  // Scroll Reveal for Choose Us Content
-  gsap.from('#choose-content', {
-    x: 40,
-    opacity: 0,
-    duration: 1.2,
-    ease: 'power3.out',
-    scrollTrigger: {
-      trigger: '#why-choose-us',
-      start: 'top 75%'
-    }
-  });
-
-  // Stagger reveal Choose points
-  gsap.from('.choosecard', {
-    y: 30,
     opacity: 0,
     stagger: 0.12,
     duration: 1.2,
     ease: 'power3.out',
     scrollTrigger: {
-      trigger: '.choose-points-grid',
+      trigger: '.team-grid',
       start: 'top 85%'
     }
   });
 
-  // Stagger reveal CTA banner
+
+  /* ==========================================================================
+     6. FINAL CTA FLOATING EFFECT (SECTION 6)
+     ========================================================================== */
   gsap.from('.cta-banner', {
     scale: 0.95,
     opacity: 0,
