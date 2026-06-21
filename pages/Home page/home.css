@@ -107,6 +107,26 @@ section {
   position: relative;
 }
 
+/* ==========================================================================
+   SCROLL REVEAL SYSTEM — IntersectionObserver based (no GSAP ScrollTrigger)
+   ========================================================================== */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+              transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.reveal-item.reveal-from-right {
+  transform: translateX(40px);
+}
+
+.reveal-item.is-revealed {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+
 .text-center {
   text-align: center;
 }
