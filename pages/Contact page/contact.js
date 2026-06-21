@@ -80,112 +80,35 @@ document.addEventListener('DOMContentLoaded', () => {
   // Register GSAP plugins
   gsap.registerPlugin(ScrollTrigger);
 
-  // Hero Stagger Fade-In (Page Load)
+  // Hero Stagger Fade-In
   const heroTL = gsap.timeline({ defaults: { ease: 'power4.out', duration: 1.5 } });
   
   heroTL.from('.header', { y: -50, opacity: 0, delay: 0.2 })
         .from('.section-label', { y: 20, opacity: 0 }, '-=1')
         .from('.hero-title span', { y: 40, opacity: 0, stagger: 0.2 }, '-=1.2')
-        .from('.hero-content .section-desc', { y: 30, opacity: 0 }, '-=1')
-        .from('.hero-actions', { y: 30, opacity: 0 }, '-=1')
-        .from('.hero-visual', { scale: 0.95, opacity: 0, ease: 'power3.out' }, '-=1.2');
+        .from('.hero-content .section-desc', { y: 30, opacity: 0 }, '-=1');
 
-  // Parallax Effect on Hero Image
-  gsap.to('#hero-img', {
-    yPercent: 12,
-    ease: 'none',
-    scrollTrigger: {
-      trigger: '#hero',
-      start: 'top top',
-      end: 'bottom top',
-      scrub: true
-    }
-  });
-
-  // Parallax Effect on Why Choose Us Image
-  gsap.to('#choose-img', {
-    yPercent: 8,
-    ease: 'none',
-    scrollTrigger: {
-      trigger: '#why-choose-us',
-      start: 'top bottom',
-      end: 'bottom top',
-      scrub: true
-    }
-  });
-
-  // Stagger entry reveal for Services grid
-  gsap.from('.service-card', {
-    y: 50,
+  // Contact Grid Stagger Reveal
+  gsap.from('#contact-info', {
+    x: -30,
     opacity: 0,
-    stagger: 0.15,
     duration: 1.2,
     ease: 'power3.out',
     scrollTrigger: {
-      trigger: '#services-grid',
+      trigger: '.contact-grid',
       start: 'top 80%'
     }
   });
 
-  // Stagger entry reveal for Process steps
-  gsap.from('.timeline-step', {
-    y: 40,
+  gsap.from('#contact-form-card', {
+    x: 30,
     opacity: 0,
-    stagger: 0.15,
     duration: 1.2,
     ease: 'power3.out',
     scrollTrigger: {
-      trigger: '#timeline-container',
+      trigger: '.contact-grid',
       start: 'top 80%'
     }
-  });
-
-  // Scroll Reveal for Choose Us Content
-  gsap.from('#choose-content', {
-    x: 40,
-    opacity: 0,
-    duration: 1.2,
-    ease: 'power3.out',
-    scrollTrigger: {
-      trigger: '#why-choose-us',
-      start: 'top 75%'
-    }
-  });
-
-  // Stagger reveal Choose points
-  gsap.from('.choosecard', {
-    y: 30,
-    opacity: 0,
-    stagger: 0.12,
-    duration: 1.2,
-    ease: 'power3.out',
-    scrollTrigger: {
-      trigger: '.choose-points-grid',
-      start: 'top 85%'
-    }
-  });
-
-  // Stagger reveal CTA banner
-  gsap.from('.cta-banner', {
-    scale: 0.95,
-    opacity: 0,
-    duration: 1.5,
-    ease: 'power3.out',
-    scrollTrigger: {
-      trigger: '#cta',
-      start: 'top 90%'
-    }
-  });
-
-  // Micro floating animation on plant SVG
-  gsap.to('.plant-decor', {
-    y: -8,
-    x: 4,
-    rotation: '-=2',
-    duration: 4,
-    repeat: -1,
-    yoyo: true,
-    ease: 'sine.inOut'
   });
 
   // Refresh ScrollTrigger on window load to recalculate element offsets
